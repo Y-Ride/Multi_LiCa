@@ -11,16 +11,19 @@
     use_fitness_based_calibration: false
 
     # Topics for all lidars
-    lidar_topics: [/sensing/lidar/top/rectified/pointcloud, /rslidar_points]
+    lidar_topics: [/ouster_top/points, /ouster_back/points]
     # topic for TFMessage
     tf_topic: /tf_static
-    visualize: false
+    visualize: True
     # read transfromations to base from a given table instead of TF message
     read_tf_from_table: true
     table_degrees: true
     # table of lidar name (frame_id in ROS), xyz translation [m], rpy rotation [deg/rad]
-    velodyne_top: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    rslidar: [0.0, 0.000, 0.0, 0.0, 0.0, 0.0]
+    os_lidar_top: [10.0, 10.0, 0.0, 0.0, 0.0, 0.0]
+    # ouster_front: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    # ouster_left: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    # ouster_right: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    os_lidar_back: [10.0, 10.0, -0.25, 0.0, -35.0, -135.0]
 
     read_pcds_from_file: false
     # path for point clouds in pcd format. Structure: <lidar_name>/<pcd>/<filename1><filename2>...
@@ -35,7 +38,7 @@
     # urdf_path: "/home/andrii/TUM/thesis/SensorCalibration/ros2_ws/src/edgar/edgar_state_publisher/urdf/edgar.description.states.urdf"
 
     # Frame id of the master lidar. Firstly, other LiDARs are calibrated w.r.t. to this
-    target_frame_id: velodyne_top
+    target_frame_id: os_lidar_top
     # target_frame_id: "lidar_ouster_right"
     # Frame id for the base frame relative to which the LiDARs are calibrated in the end
     base_frame_id: rear_axle_center
@@ -46,6 +49,8 @@
 
     # calibration results are stored here (path relative to the dir with multi_lidar_calibrator.py)
     default_output_dir: /../output/
+    # logging output
+    # results_file: ouster_results.txt
 
     # parameters for the GICP algorithm
     # Maximum correspondence points-pair distance.

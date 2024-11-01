@@ -59,6 +59,7 @@ class MultiLidarCalibrator(Node):
         self.runs_count = self.declare_parameter("runs_count", 1).value
         self.crop_cloud = self.declare_parameter("crop_cloud", 25).value
 
+        self.get_logger().info(f"File path: {os.path.dirname(os.path.realpath(__file__))}")
         self.output_dir = (
             os.path.dirname(os.path.realpath(__file__))
             + self.declare_parameter("output_dir", "/../output/").value
@@ -69,6 +70,7 @@ class MultiLidarCalibrator(Node):
             os.path.dirname(os.path.realpath(__file__))
             + self.declare_parameter("pcd_directory", "/../data/demo/").value
         )
+        self.get_logger().info(f"Output directory: {self.output_dir}")
 
         self.rel_fitness = self.declare_parameter("rel_fitness", 1e-7).value
         self.rel_rmse = self.declare_parameter("rel_rmse", 1e-7).value
