@@ -19,11 +19,11 @@
     read_tf_from_table: true
     table_degrees: true
     # table of lidar name (frame_id in ROS), xyz translation [m], rpy rotation [deg/rad]
-    os_lidar_top: [10.0, 10.0, 0.0, 0.0, 0.0, 0.0]
+    os_lidar_top: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     # ouster_front: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     # ouster_left: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     # ouster_right: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    os_lidar_back: [10.0, 10.0, -0.25, 0.0, -35.0, -135.0]
+    os_lidar_back: [2.0, 0.0, -0.25, 0.0, -35.0, -135.0]
 
     read_pcds_from_file: false
     # path for point clouds in pcd format. Structure: <lidar_name>/<pcd>/<filename1><filename2>...
