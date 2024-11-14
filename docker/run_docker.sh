@@ -13,8 +13,9 @@ docker run -it --rm --privileged \
     -v $SCRIPT_DIR/../config:/ros_ws/src/multi_lidar_calibration/config \
     -v $SCRIPT_DIR/../data:/ros_ws/src/multi_lidar_calibration/data \
     -v $SCRIPT_DIR/../output:/ros_ws/src/multi_lidar_calibration/output \
+    -v $SCRIPT_DIR/../launch:/ros_ws/src/multi_lidar_calibration/launch \
     -v $SCRIPT_DIR/../multi_lidar_calibrator:/ros_ws/src/multi_lidar_calibration/multi_lidar_calibrator \
-    tum.ftm.multi_lidar_calibration:latest \
+    multi_lidar_calibration:latest \
     /bin/bash
 
 xhost -local:

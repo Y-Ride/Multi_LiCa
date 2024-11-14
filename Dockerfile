@@ -72,6 +72,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
 RUN /bin/bash -c '. /opt/ros/$ROS_DISTRO/setup.bash && \
     colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to multi_lidar_calibrator'
 
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /root/.bashrc && \
+    echo "source /ros_ws/install/setup.bash" >> /root/.bashrc
+
 ENV QT_DEBUG_PLUGINS=1
 
 CMD [ "bash" ]

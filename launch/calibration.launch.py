@@ -10,7 +10,7 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     pkg_share = get_package_share_directory("multi_lidar_calibrator")
-    parameter_file = os.path.join(pkg_share, "config", "demo.yaml")
+    parameter_file = os.path.join(pkg_share, "config", "params.yaml")
     output = os.path.join(pkg_share, "output")
 
     output_dir_arg = DeclareLaunchArgument(
