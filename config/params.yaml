@@ -2,7 +2,7 @@
   ros__parameters:
     # number of point clouds for each lidar for the calibration. Larger number might improve robustness
     # when > 1, the environment and LiDARs should be static. In general, calibration is (much) worse if dynamic.
-    frame_count: 5
+    frame_count: 10
     # number of complete calibration runs (for testing purposes)
     runs_count: 1
 
@@ -20,10 +20,10 @@
     table_degrees: true
     # table of lidar name (frame_id in ROS), xyz translation [m], rpy rotation [deg/rad]
     os_lidar_top: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    # ouster_front: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    ouster_left: [-0.01, -0.75, -0.01, 45.0, 0.0, -135.0]
-    # ouster_right: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    # os_lidar_back: [2.0, 0.0, -0.25, 0.0, -35.0, -135.0]
+    os_lidar_front: [-2.0, 0.0, -0.5, 0.0, 35.0, 45.0]
+    os_lidar_left: [-10.01, -0.75, -0.01, 45.0, 0.0, -135.0]
+    os_lidar_right: [0.01, 0.75, -0.01,-45.0, 0.0, 135.0]
+    os_lidar_back: [2.0, 0.0, -0.25, 0.0, -35.0, -135.0]
 
     read_pcds_from_file: false
     # path for point clouds in pcd format. Structure: <lidar_name>/<pcd>/<filename1><filename2>...
